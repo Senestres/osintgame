@@ -90,9 +90,6 @@ function checkAnswer() {
     if (solution.includes(value) === true) {
         playerAnswers[answerN] = value
         unlockAnswer(answerN)
-        if (playerProgress === answers.length) {
-            alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
-        }
         saveProgress()
     }
 }
@@ -104,13 +101,15 @@ function unlockAnswer(answerN) {
     inputField.setAttribute('style', 'background-color: lightgreen;');
     inputField.setAttribute("placeholder", playerAnswers[answerN]);
     inputField.disabled = true;
-    if (typeof playerAnswers === "string") {
-        photoID = document.getElementById("photoID");
+    if (typeof playerAnswers[0] === "string") {             // maybe this is a problem
+        photoPH = document.getElementById("photoPlaceHolder");
+        photoPH.src="src/untitled-3.jpg";
+        /* photoID = document.getElementById("photoID");
         photoPH = document.getElementById("photoPlaceholder");
         const newPhoto = document.createElement("img");
         newPhoto.src="src/untitled-3.jpg";
         photoID.appendChild(newPhoto);
-        photoPH.remove()
+        photoPH.remove() */
     }
 }
 
@@ -132,9 +131,12 @@ function updateAnswers() {
 
 // Show progression
 function progress() {
-    let playerProgress = Object.keys(playerAnswers).length;
+    var playerProgress = Object.keys(playerAnswers).length;
     let progressBar = document.getElementById("progressBar");
     progressBar.value = playerProgress
+    if (playerProgress === answers.length) {
+        alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
+    }
 }
 
 // Save and reload
@@ -148,7 +150,7 @@ function saveProgress() {
 }
 
 function loadProgress() {
-    if (!JSON.parse(localStorage.getItem('saveData'))) {
+    if (!JSON.parse(localStorage.getItem('saveData'))) {                //  might need to change this ?
         playerData = {}
     } else {
         var playerData = JSON.parse(localStorage.getItem('saveData'));
