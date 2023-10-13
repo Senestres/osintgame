@@ -3,6 +3,7 @@ let playerPasswords = {}
 let progressBar = 0
 let inputField = {}
 let folder = {}
+var playerData = {}
 
 const solutions = [["untitled-3.jpg", "untitled-3"], ["vaira"], ["jakobson"], ["mott street", "mott st."], ["19"], ["new york", "new-york"], ["usa", "etats-unis d'amerique", "etats-unis", "united states of america"], ["jacques"], ["dubochet"], ["henri"], ["des"], ["simonetta"], ["sommaruga"]]
 
@@ -109,7 +110,7 @@ function checkAnswer() {
     if (solution.includes(value) === true) {
         playerAnswers[answerN] = value
         unlockAnswer(answerN)
-        if (playerProgress = answers.length) {
+        if (playerProgress ==== answers.length) {
             alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
         }
         saveProgress()
