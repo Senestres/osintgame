@@ -103,13 +103,7 @@ function unlockAnswer(answerN) {
     inputField.disabled = true;
     if (typeof playerAnswers[0] === "string") {             // maybe this is a problem
         photoPH = document.getElementById("photoPlaceHolder");
-        photoPH.src="src/untitled-3.jpg";
-        /* photoID = document.getElementById("photoID");
-        photoPH = document.getElementById("photoPlaceholder");
-        const newPhoto = document.createElement("img");
-        newPhoto.src="src/untitled-3.jpg";
-        photoID.appendChild(newPhoto);
-        photoPH.remove() */
+        photoPH.src="/src/untitled-3.jpg";
     }
 }
 
