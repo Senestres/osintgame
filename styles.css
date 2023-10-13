@@ -7,6 +7,8 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 main {
@@ -33,6 +35,7 @@ main {
 
 .docDisplay {
     flex: 1 1 auto;
+    text-align: center;
 }
 
 #motsDePasse {
@@ -56,15 +59,36 @@ mark.secret {
     margin: 20px;
 }
 
+.title {
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+#progressBar {
+    width: 150px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#progress {
+    margin-bottom: 10px;
+}
+
 .photoID {
     background-color: rgb(255, 255, 255);
     height: 4.5cm;
     width: 3.5cm;
 }
 
+.photoID img {
+    height: 4.5cm;
+    width: 3.5cm;
+}
+
 fieldset {
     border: 0;
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
 }
 

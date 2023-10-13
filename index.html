@@ -38,60 +38,55 @@
             <iframe class="docDisplay" name="workspace" src="mission.html"></iframe>
         </div>
         <div class="identité">
-            <div class="photoID">Photo indisponible</div>
-            <label for="photoID">Nom de fichier photo</label>
-            <input type="text" id="photoID" class="answer"></br>
-            
-                <fieldset disabled>
-                    <label for="pseudo">Pseudonyme:</label>
-                    <input type="text" id="pseudo" value="Mr. Z"></br>
-                    <label for="danger">Niveau de dangerosité :</label>
-                    <input type="text" id="danger" value="8"></br>
-                </fieldset>
+            <div id="progress">Progrès:
+                <progress value="0" max="13" id="progressBar">Progrès</progress>
+            </div>
 
+            <div class="photoID" id="photoID"><div id="photoPlaceholder">Photo indisponible</div></div>
+            <label for="photoID">Nom de fichier photo</label>
+            <fieldset id="myFieldset"><input type="text" id="answer0" class="answer"></fieldset>
+                    Pseudonyme: Mr. Z</br>
+                    Niveau de dangerosité : 8</br>
                 <fieldset id="myFieldset">
                     <label for="prenom">Prénom:</label>
-                    <input type="text" id="prenom" class="answer"></br>
+                    <input type="text" id="answer1" class="answer"></br>
                     <label for="nom">Nom:</label>
-                    <input type="text" id="nom" class="answer"></br>
+                    <input type="text" id="answer2" class="answer"></br>
                 </fieldset>
-                    <label for="pseudo">Date de naissance: 1963</label></br>
-                    <label for="pseudo">Lieu de naissance : Estonie</label></br>
+                    Date de naissance: 1963</br>
+                    Lieu de naissance : Estonie</br>
                 </fieldset>
 
                 <fieldset>
-                    Domicile:
+                    Domicile:</br>
                     <label for="rue">Rue</label>
-                    <input type="text" id="rue" class="answer"></br>
+                    <input type="text" id="answer3" class="answer"></br>
                     <label for="No">No</label>
-                    <input type="text" id="No" class="answer"></br>
+                    <input type="text" id="answer4" class="answer"></br>
                     <label for="localite">Localité</label>
-                    <input type="text" id="localité" class="answer"></br>
+                    <input type="text" id="answer5" class="answer"></br>
                     <label for="pays">Pays</label>
-                    <input type="text" id="pays" class="answer"></br>
+                    <input type="text" id="answer6" class="answer"></br>
                 </fieldset>
 
                 <fieldset>
-                    Prochaines cibles : personnalités suisses, non spécifiées.</br>
-                    Cible 1:</br>
+                    <div>Prochaines cibles suisses</br></div>
+                    <div class="title">Cible 1:</br></div>
                     <label for="Cible1prenom">Prénom</label>
-                    <input type="text" id="Cible1nom" class="answer">
+                    <input type="text" id="answer7" class="answer">
                     <label for="Cible1nom">Nom</label>
-                    <input type="text" id="Cible1nom" class="answer"></br>
-                    Cible 2:</br>
+                    <input type="text" id="answer8" class="answer"></br>
+                    <div class="title">Cible 2:</br></div>
                     <label for="Cible2prenom">Prénom</label>
-                    <input type="text" id="Cible2nom" class="answer">
+                    <input type="text" id="answer9" class="answer">
                     <label for="Cible2nom">Nom</label>
-                    <input type="text" id="Cible2nom" class="answer"></br>
-                    Cible 3:</br>
+                    <input type="text" id="answer10" class="answer"></br>
+                    <div class="title">Cible 3:</br></div>
                     <label for="Cible3prenom">Prénom</label>
-                    <input type="text" id="Cible3nom" class="answer">
+                    <input type="text" id="answer11" class="answer">
                     <label for="Cible3nom">Nom</label>
-                    <input type="text" id="Cible3nom" class="answer"></br>
+                    <input type="text" id="answer12" class="answer"></br>
                 </fieldset>
-            <div id="progress">Progrès:
-                <div id="progressBar"></div>
-            </div>
         </div>
     </main>
 </body>

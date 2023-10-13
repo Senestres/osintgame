@@ -1,5 +1,8 @@
 let playerAnswers = {}
 let playerPasswords = {}
+let progressBar = 0
+let inputField = {}
+let folder = {}
 
 const solutions = [["untitled-3.jpg", "untitled-3"], ["vaira"], ["jakobson"], ["mott street", "mott st."], ["19"], ["new york", "new-york"], ["usa", "etats-unis d'amerique", "etats-unis", "united states of america"], ["jacques"], ["dubochet"], ["henri"], ["des"], ["simonetta"], ["sommaruga"]]
 
@@ -37,12 +40,10 @@ folders.forEach(folder => {
 function askPassword() {
     let folderN = folders.indexOf(this)
     let correctPassword = dbRoot[folderN].password
-    if (playerPasswords[folderN] === correctPassword) {console.log("yes")
-    } else {
+    if (playerPasswords[folderN] != correctPassword) {
         let promptPassword = prompt("Entrer le mot de passe");
         checkPassword(promptPassword, folderN)
     }
-        console.log(playerPasswords, folderN, correctPassword)
 }
 
 // Check if password matches
@@ -53,7 +54,6 @@ function checkPassword(promptPassword, folderN) {
         playerPasswords[folderN] = promptPassword
         progress()
         saveProgress()
-        console.log(playerPasswords)
     }
     console.log(correctPassword)
 }
@@ -76,8 +76,47 @@ function unlockFolder(folderN) {
         newSpanLine.classList.add("line");
         newLi.prepend(newSpanLine);
     }
+    console.log(folder)
 }
 
+// Disables input fields
+function unlockAnswer(answerN) {
+    inputField = "answer" + answerN;
+    inputField = document.getElementById(inputField);
+    inputField.setAttribute('style', 'background-color: lightgreen;');
+    inputField.setAttribute("placeholder", playerAnswers[answerN]);
+    inputField.disabled = true;
+    if (playerAnswers[0] != {}) {
+        photoID = document.getElementById("photoID");
+        photoPH = document.getElementById("photoPlaceholder");
+        const newPhoto = document.createElement("img");
+        newPhoto.src="src/untitled-3.jpg";
+        photoID.appendChild(newPhoto);
+        photoPH.remove()
+    }
+}
+
+// Add event on typing
+const answers = Array.from(document.getElementsByClassName('answer'))
+answers.forEach(answer => {
+    answer.addEventListener("keyup", checkAnswer);
+})
+
+function checkAnswer() {
+    let answerN = answers.indexOf(this)
+    value = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    let solution = solutions[answerN]
+    if (solution.includes(value) === true) {
+        playerAnswers[answerN] = value
+        unlockAnswer(answerN)
+        if (playerProgress = answers.length) {
+            alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
+        }
+        saveProgress()
+    }
+}
+
+// Updates unlocked folders
 function updatePasswords() {
     Object.keys(playerPasswords).forEach(password => {
         let folderN = password;
@@ -85,51 +124,22 @@ function updatePasswords() {
     })
 }
 
+// Updates input fields
 function updateAnswers() {
     Object.keys(playerAnswers).forEach(answer => {
-        let folderN = answer;
-        unlockFolder(folderN);
-        console.log(folderN)
+        let answerN = answer;
+        unlockAnswer(answerN);
     })
 }
 
-// Vérifier les solutions
-var solution
-const answers = Array.from(document.getElementsByClassName('answer'))
-answers.forEach(answer => {
-    answer.addEventListener("keyup", function checkValue() {
-        number = answers.indexOf(answer)
-        solution = solutions[number]
-        value = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        if (solution.includes(value)) {
-            answer.setAttribute('style', 'background-color: lightgreen;');
-            answer.disabled = true
-            playerAnswers[number] = value
-            saveProgress()
-        }
-    });
-});
-
-
-/* function askPassword() {
-    let folderN = folders.indexOf(this)
-    let correctPassword = dbRoot[folderN].password
-    if (playerPasswords[folderN] === correctPassword) {console.log("yes")
-    } else {
-        let promptPassword = prompt("Entrer le mot de passe");
-        checkPassword(promptPassword, folderN)
-    }
-        console.log(playerPasswords, folderN, correctPassword)
-} */
-
-// Afficher la progression
+// Show progression
 function progress() {
-    let playerProgress = Object.keys(playerAnswers).length
-    let progressBar = document.getElementById("progressBar")
-    progressBar.innerHTML = playerProgress + "/" + answers.length
+    let playerProgress = Object.keys(playerAnswers).length;
+    let progressBar = document.getElementById("progressBar");
+    progressBar.value = playerProgress //+ "/" + answers.length;
 }
 
-// Sauver et recharger
+// Save and reload
 function saveProgress() {
     var playerData = {
         foundPasswords: playerPasswords,
@@ -148,27 +158,9 @@ function loadProgress() {
     progress()
 }
 
-
 function deleteProgress() {
     localStorage.clear();
 }
 
 console.log()
 window.onload = loadProgress()
-
-
-// Add and compare an img
-/* window.addEventListener('load', function() {
-    document.querySelector('input[type="file"]').addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            var img = document.querySelector('img');  // $('img')[0]
-            img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-            img.onload = imageIsLoaded;
-        }
-    });
-  });
-  
-  function imageIsLoaded() { 
-    alert(this.src);  // blob url
-    // update width and height ...
-  } */
