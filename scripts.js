@@ -14,7 +14,7 @@ function Folder(files, password) {
 const folder1 = new Folder(["readme.txt", "mot de passe3.txt"], "147852");
 const folder2 = new Folder(["photoidentité.jpg","mail.txt"], "1896");
 const folder3 = new Folder(["Dossier 7 mdp 1234.txt"], "abcd");
-const folder4 = new Folder(["mail4.txt", "notes.txt", "Untitled-1.jpg", "Untitled-2.jpg", "Untitled-3.jpg", "Untitled-4.jpg", "Untitled-5.jpg"], "1236");
+const folder4 = new Folder(["mail4.txt", "notes.txt", "untitled-1.jpg", "untitled-2.jpg", "untitled-3.jpg", "untitled-4.jpg", "untitled-5.jpg"], "1236");
 const folder5 = new Folder(["c2.jpg", "mailch.txt"], "moscou");
 const folder6 = new Folder(["mail6.txt", "adresse.jpg", "iphonescreenshot.jpg"], "motdepassefacile");
 const folder7 = new Folder(["mail7.txt", "Lorem Ipsum.txt"], "1234");
@@ -91,7 +91,7 @@ function unlockAnswer(answerN) {
         photoID = document.getElementById("photoID");
         photoPH = document.getElementById("photoPlaceholder");
         const newPhoto = document.createElement("img");
-        newPhoto.src="src/Untitled-3.jpg";
+        newPhoto.src="src/untitled-3.jpg";
         photoID.appendChild(newPhoto);
         photoPH.remove()
     }
