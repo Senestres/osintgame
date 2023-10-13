@@ -11,7 +11,7 @@ function Folder(files, password) {
     this.password = password;
 }
 const folder1 = new Folder(["readme.txt", "mot de passe3.txt"], "147852");
-const folder2 = new Folder(["ahahah.jpg","mail.txt"], "1896");
+const folder2 = new Folder(["photoidentité.jpg","mail.txt"], "1896");
 const folder3 = new Folder(["Dossier 7 mdp 1234.txt"], "abcd");
 const folder4 = new Folder(["mail4.txt", "notes.txt", "Untitled-1.jpg", "Untitled-2.jpg", "Untitled-3.jpg", "Untitled-4.jpg", "Untitled-5.jpg"], "1236");
 const folder5 = new Folder(["c2.jpg", "mailch.txt"], "moscou");
