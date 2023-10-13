@@ -3,7 +3,6 @@ let playerPasswords = {}
 let progressBar = 0
 let inputField = {}
 let folder = {}
-var playerData = {}
 
 const solutions = [["untitled-3.jpg", "untitled-3"], ["vaira"], ["jakobson"], ["mott street", "mott st."], ["19"], ["new york", "new-york"], ["usa", "etats-unis d'amerique", "etats-unis", "united states of america"], ["jacques"], ["dubochet"], ["henri"], ["des"], ["simonetta"], ["sommaruga"]]
 
@@ -53,7 +52,6 @@ function checkPassword(promptPassword, folderN) {
     if (promptPassword === correctPassword) {
         unlockFolder(folderN)
         playerPasswords[folderN] = promptPassword
-        progress()
         saveProgress()
     }
     console.log(correctPassword)
@@ -77,24 +75,6 @@ function unlockFolder(folderN) {
         newSpanLine.classList.add("line");
         newLi.prepend(newSpanLine);
     }
-    console.log(folder)
-}
-
-// Disables input fields
-function unlockAnswer(answerN) {
-    inputField = "answer" + answerN;
-    inputField = document.getElementById(inputField);
-    inputField.setAttribute('style', 'background-color: lightgreen;');
-    inputField.setAttribute("placeholder", playerAnswers[answerN]);
-    inputField.disabled = true;
-    if (playerAnswers[0] != {}) {
-        photoID = document.getElementById("photoID");
-        photoPH = document.getElementById("photoPlaceholder");
-        const newPhoto = document.createElement("img");
-        newPhoto.src="src/untitled-3.jpg";
-        photoID.appendChild(newPhoto);
-        photoPH.remove()
-    }
 }
 
 // Add event on typing
@@ -114,6 +94,23 @@ function checkAnswer() {
             alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
         }
         saveProgress()
+    }
+}
+
+// Disables input fields
+function unlockAnswer(answerN) {
+    inputField = "answer" + answerN;
+    inputField = document.getElementById(inputField);
+    inputField.setAttribute('style', 'background-color: lightgreen;');
+    inputField.setAttribute("placeholder", playerAnswers[answerN]);
+    inputField.disabled = true;
+    if (typeof playerAnswers === "string") {
+        photoID = document.getElementById("photoID");
+        photoPH = document.getElementById("photoPlaceholder");
+        const newPhoto = document.createElement("img");
+        newPhoto.src="src/untitled-3.jpg";
+        photoID.appendChild(newPhoto);
+        photoPH.remove()
     }
 }
 
@@ -145,18 +142,22 @@ function saveProgress() {
     var playerData = {
         foundPasswords: playerPasswords,
         foundAnswers: playerAnswers
-    }    
+    }
     localStorage.setItem('saveData',JSON.stringify(playerData));
     progress()
 }
 
 function loadProgress() {
-    var playerData = JSON.parse(localStorage.getItem('saveData'));
-    playerPasswords = playerData.foundPasswords;
-    playerAnswers = playerData.foundAnswers;
-    updateAnswers()
-    updatePasswords()
-    progress()
+    if (!JSON.parse(localStorage.getItem('saveData'))) {
+        playerData = {}
+    } else {
+        var playerData = JSON.parse(localStorage.getItem('saveData'));
+        playerPasswords = playerData.foundPasswords;
+        playerAnswers = playerData.foundAnswers;
+        updateAnswers()
+        updatePasswords()
+        progress()
+    }
 }
 
 function deleteProgress() {
