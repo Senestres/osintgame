@@ -91,7 +91,7 @@ function unlockAnswer(answerN) {
         photoID = document.getElementById("photoID");
         photoPH = document.getElementById("photoPlaceholder");
         const newPhoto = document.createElement("img");
-        newPhoto.src="src/untitled-3.jpg";
+        newPhoto.src="src/Untitled-3.jpg";
         photoID.appendChild(newPhoto);
         photoPH.remove()
     }
@@ -110,7 +110,7 @@ function checkAnswer() {
     if (solution.includes(value) === true) {
         playerAnswers[answerN] = value
         unlockAnswer(answerN)
-        if (playerProgress ==== answers.length) {
+        if (playerProgress === answers.length) {
             alert("Félicitations ! Vous avez réussi à identier Mr. Z et à sauver le monde !")
         }
         saveProgress()
@@ -137,7 +137,7 @@ function updateAnswers() {
 function progress() {
     let playerProgress = Object.keys(playerAnswers).length;
     let progressBar = document.getElementById("progressBar");
-    progressBar.value = playerProgress //+ "/" + answers.length;
+    progressBar.value = playerProgress
 }
 
 // Save and reload
