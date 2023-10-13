@@ -1,0 +1,13 @@
+De: Mr. Z <mrz@tempmail.com>
+A: QWERT <qwert@tempmail.com>
+Le dossier 5 a pour mot de passe la capitale du pays avec la plus grande superficie.
+Mr. Z.
+
+De: QWERT <qwert@tempmail.com>
+A: Mr. Z <mrz@tempmail.com>
+Sans majuscule ?
+
+De: Mr. Z <mrz@tempmail.com>
+A: QWERT <qwert@tempmail.com>
+Sans majuscule.
+Mr. Z.

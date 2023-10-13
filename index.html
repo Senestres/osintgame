@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Confidentiel</title>
+</head>
+<body>
+    <header>
+        <h1>Dossiers</h1>
+        <h1>Documents</h1>
+        <h1>Identité du suspect</h1>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="dossiers">
+                <div id="fileTree">
+                    <ul>
+                        <li class="root" id="dossier0"><span class="folder"></span>Dossier 1</li>
+                        <li class="root" id="dossier1"><span class="folder"></span>Dossier 2</li>
+                        <li class="root" id="dossier2"><span class="folder"></span>Dossier 3</li>
+                        <li class="root" id="dossier3"><span class="folder"></span>Dossier 4</li>
+                        <li class="root" id="dossier4"><span class="folder"></span>Dossier 5</li>
+                        <li class="root" id="dossier5"><span class="folder"></span>Dossier 6</li>
+                        <li class="root" id="dossier6"><span class="folder"></span>Dossier 7</li>
+                        <li class="root" id="dossier7"><span class="folder"></span>Dossier 8</li>
+                        <li class="root" id="dossier8"><span class="folder"></span>Dossier 9</li>
+                    </ul>
+    
+                </div>
+            </div>
+    
+                <h1><a href="mission.html" target="workspace">Mission</a></h1>
+                <h1><a href="manuel.html" target="workspace">Manuel</a></h1>
+        </div>
+        <div class="workspace">
+            <iframe class="docDisplay" name="workspace" src="mission.html"></iframe>
+        </div>
+        <div class="identité">
+            <div class="photoID">Photo indisponible</div>
+            <label for="photoID">Nom de fichier photo</label>
+            <input type="text" id="photoID" class="answer"></br>
+            
+                <fieldset disabled>
+                    <label for="pseudo">Pseudonyme:</label>
+                    <input type="text" id="pseudo" value="Mr. Z"></br>
+                    <label for="danger">Niveau de dangerosité :</label>
+                    <input type="text" id="danger" value="8"></br>
+                </fieldset>
+
+                <fieldset id="myFieldset">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" id="prenom" class="answer"></br>
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" class="answer"></br>
+                </fieldset>
+                    <label for="pseudo">Date de naissance: 1963</label></br>
+                    <label for="pseudo">Lieu de naissance : Estonie</label></br>
+                </fieldset>
+
+                <fieldset>
+                    Domicile:
+                    <label for="rue">Rue</label>
+                    <input type="text" id="rue" class="answer"></br>
+                    <label for="No">No</label>
+                    <input type="text" id="No" class="answer"></br>
+                    <label for="localite">Localité</label>
+                    <input type="text" id="localité" class="answer"></br>
+                    <label for="pays">Pays</label>
+                    <input type="text" id="pays" class="answer"></br>
+                </fieldset>
+
+                <fieldset>
+                    Prochaines cibles : personnalités suisses, non spécifiées.</br>
+                    Cible 1:</br>
+                    <label for="Cible1prenom">Prénom</label>
+                    <input type="text" id="Cible1nom" class="answer">
+                    <label for="Cible1nom">Nom</label>
+                    <input type="text" id="Cible1nom" class="answer"></br>
+                    Cible 2:</br>
+                    <label for="Cible2prenom">Prénom</label>
+                    <input type="text" id="Cible2nom" class="answer">
+                    <label for="Cible2nom">Nom</label>
+                    <input type="text" id="Cible2nom" class="answer"></br>
+                    Cible 3:</br>
+                    <label for="Cible3prenom">Prénom</label>
+                    <input type="text" id="Cible3nom" class="answer">
+                    <label for="Cible3nom">Nom</label>
+                    <input type="text" id="Cible3nom" class="answer"></br>
+                </fieldset>
+            <div id="progress">Progrès:
+                <div id="progressBar"></div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="scripts.js"></script> 
+</html>
+            
+            
+<!-- 
+Mettre des indices dans le code HTML
+Mettre en page le tout, donner un ton officiel/secret à la papers please (confidentiel etc.)
+Tutoriel
+Check si photo uploadée est la bonne
+Eviter de devoir réactualiser les mdp à chaque recharge de la page
+Ajouter une obfuscation par dossiers interposés
+ -->
+

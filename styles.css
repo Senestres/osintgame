@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #8487707a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sidebar {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.dossiers {
+    display: flex;
+    font-size: larger;
+}
+
+.workspace {
+    display: flex;
+    width: 1000px;
+}
+
+.docDisplay {
+    flex: 1 1 auto;
+}
+
+#motsDePasse {
+    display: flex;
+    flex-direction: column; 
+}
+
+mark.secret {
+    background-color: black;
+}
+
+.footertxt {
+    font-style: italic;
+    font-size: smaller;
+}
+
+.identité {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.photoID {
+    background-color: rgb(255, 255, 255);
+    height: 4.5cm;
+    width: 3.5cm;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add filetree structure */
+ul, li {
+    list-style-type: none;
+    margin: 0;
+}
+
+span.line {
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    height: 1.5rem;
+    width: 2rem;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    margin-left: 1rem;
+}
+
+.root > ul {
+    padding-left: 0;
+}
+
+/* Add folder and file icons*/
+span.folder::before {
+    content: "\1F5C0";
+    color: black;
+    display: inline;
+  }
+
+span.folder-open::before {
+    content: "\1F5C1";
+  }
+
+span.file::before {
+    content: "\1F5CB";
+    color: black;
+    display: inline;
+  }
+
+span.picture::before {
+    content: "\1F5BB";
+    color: black;
+    display: inline;
+  }
+
+/* Hide the nested list, selects all ul inside li */
+li ul { 
+    display: none;
+  }
+  
+/* Show the nested list when the user clicks on the folder (javascript) */
+.active {
+    display: block;
+}
