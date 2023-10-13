@@ -103,7 +103,7 @@ function unlockAnswer(answerN) {
     inputField.disabled = true;
     if (typeof playerAnswers[0] === "string") {             // maybe this is a problem
         photoPH = document.getElementById("photoPlaceHolder");
-        photoPH.src="/src/untitled-3.jpg";
+        photoPH.src="src/untitled-3.jpg";
     }
 }
 
@@ -144,7 +144,7 @@ function saveProgress() {
 }
 
 function loadProgress() {
-    if (!JSON.parse(localStorage.getItem('saveData'))) {                //  might need to change this ?
+    if (!JSON.parse(localStorage.getItem('saveData'))) {         
         playerData = {}
     } else {
         var playerData = JSON.parse(localStorage.getItem('saveData'));
