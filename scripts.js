@@ -53,6 +53,9 @@ function checkPassword(promptPassword, folderN) {
         unlockFolder(folderN)
         playerPasswords[folderN] = promptPassword
         saveProgress()
+        alert("Mot de passe correct. Le dossier est ouvert.")
+    } else {
+        alert("Mot de passe incorrect. Accès refusé.")
     }
     console.log(correctPassword)
 }
@@ -98,9 +101,16 @@ function checkAnswer() {
 function unlockAnswer(answerN) {
     inputField = "answer" + answerN;
     inputField = document.getElementById(inputField);
-    inputField.setAttribute('style', 'background-color: lightgreen;');
-    inputField.setAttribute("placeholder", playerAnswers[answerN]);
+/*     inputField.setAttribute('style', 'background-color: lightgreen;');
+    inputField.setAttribute("placeholder", playerAnswers[answerN]); */
     inputField.disabled = true;
+    inputField.setAttribute('style', 'display: none;');
+
+    const newCorrectInput = document.createElement("div");
+    newCorrectInput.classList.add("correctInput");
+    newCorrectInput.innerHTML = playerAnswers[answerN];
+    inputField.parentNode.prepend(newCorrectInput);
+
     if (typeof playerAnswers[0] === "string") {
         photoPH = document.getElementById("photoPlaceHolder");
         photoPH.src="src/untitled-3.jpg";
