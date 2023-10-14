@@ -101,7 +101,7 @@ function unlockAnswer(answerN) {
     inputField.setAttribute('style', 'background-color: lightgreen;');
     inputField.setAttribute("placeholder", playerAnswers[answerN]);
     inputField.disabled = true;
-    if (typeof playerAnswers[0] === "string") {             // maybe this is a problem
+    if (typeof playerAnswers[0] === "string") {
         photoPH = document.getElementById("photoPlaceHolder");
         photoPH.src="src/untitled-3.jpg";
     }
