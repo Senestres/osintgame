@@ -4,7 +4,7 @@ let progressBar = 0
 let inputField = {}
 let folder = {}
 
-const solutions = [["untitled-3.jpg", "untitled-3"], ["vaira"], ["jakobson"], ["mott street", "mott st."], ["19"], ["new york", "new-york"], ["usa", "etats-unis d'amerique", "etats-unis", "united states of america"], ["jacques"], ["dubochet"], ["henri"], ["des"], ["simonetta"], ["sommaruga"]]
+const solutions = [["untitled-3.jpg", "untitled-3"], ["vaira"], ["jakobson"], ["mott street", "mott st."], ["19"], ["new york", "new-york"], ["usa", "etats-unis d'amerique", "etats-unis", "united states of america", "etats unis d'amerique", "etats unis"], ["jacques"], ["dubochet"], ["henri"], ["des"], ["simonetta"], ["sommaruga"]]
 
 function Folder(files, password) {
     this.files = files;
@@ -16,7 +16,7 @@ const folder3 = new Folder(["Dossier 7 mdp 1234.txt"], "abcd");
 const folder4 = new Folder(["mail4.txt", "notes.txt", "untitled-1.jpg", "untitled-2.jpg", "untitled-3.jpg", "untitled-4.jpg", "untitled-5.jpg"], "1236");
 const folder5 = new Folder(["c2.jpg", "mailch.txt"], "moscou");
 const folder6 = new Folder(["mail6.txt", "adresse.jpg", "iphonescreenshot.jpg"], "motdepassefacile");
-const folder7 = new Folder(["mail7.txt", "Lorem Ipsum.txt"], "1234");
+const folder7 = new Folder(["mail7.txt", "Lorem Ipsum.html"], "1234");
 const folder8 = new Folder(["mail8.txt", "c_b_e1.txt"],  "987");
 const folder9 = new Folder(["mail9.txt", "Cible3.txt"], "963852");
 var dbRoot = [folder1, folder2, folder3, folder4, folder5, folder6, folder7, folder8, folder9]
@@ -57,7 +57,6 @@ function checkPassword(promptPassword, folderN) {
     } else {
         alert("Mot de passe incorrect. Accès refusé.")
     }
-    console.log(correctPassword)
 }
 
 //Unlock folders
@@ -170,5 +169,5 @@ function deleteProgress() {
     localStorage.clear();
 }
 
-console.log()
+console.log("Vaira J. was here.")
 window.onload = loadProgress()

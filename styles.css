@@ -7,7 +7,7 @@ body {
     display: grid;
     flex-direction: column;
     padding: 1em;
-    font-family: monospace;
+    font-family: monospace, "Times New Roman";
     background-color: #ffffff;
 }
 
@@ -121,8 +121,11 @@ label {
     appearance: none;
 }
 
-#progressBar::-webkit-progress-value,
 #progressBar::-moz-progress-bar {
+    background-color: black;
+}
+#progressBar::-webkit-progress-value
+ {
     background-color: black;
 }
 
@@ -175,14 +178,25 @@ span.picture::before {
     display: inline;
   }
 
+/* Link style and hover */
+a {
+    color: black;
+    text-decoration: underline 0.1em rgba(0, 0, 0, 0);
+    transition: text-decoration-color 300ms;
+}
+
+a:hover{
+    text-decoration-color: rgba(0, 0, 0, 1);
+
+}
+
 /* Hide the nested list, selects all ul inside li */
 li ul { 
     display: none;
+    font-size: smaller;
   }
   
 /* Show the nested list when the user clicks on the folder (javascript) */
 .active {
     display: block;
 }
-
-
